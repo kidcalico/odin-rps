@@ -29,3 +29,10 @@ console.log(getHumanChoice());
 
 let humanScore = 0;
 let computerScore = 0;
+
+// Write the logic to play a single round
+// Declare a new function called playRound
+// Define two parameters for playRound: humanChoice and computerChoice. Use these two parameters to take both choices as arguments
+// Make humanChoice case-insensitive
+// Log a string value for playRound such as "You lose! Paper beats Rock!"
+// Increment the ___Score variable based on the winner
