@@ -25,4 +25,7 @@ function getHumanChoice() {
 
 console.log(getHumanChoice());
 
-// Declare the players' score variables
+// Declare the players' score variables with an initial value of 0
+
+let humanScore = 0;
+let computerScore = 0;
