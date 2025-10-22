@@ -3,7 +3,7 @@
 // Write function getComputerChoice so that getComputerChoice will return "Rock", "Paper" or "Scissors"
 
 
-function getComputerChoice () {
+function getComputerChoice() {
     let compChoice = Math.floor(Math.random() * 3) + 1;
     if (compChoice === 1) {
         return "Rock"
@@ -17,6 +17,7 @@ function getComputerChoice () {
 // console.log(getComputerChoice());
 
 // Write function getHumanChoice so that the user is prompted to enter either "Rock", "Paper" or "Scissors", and the function returns the choice
+// Make getHumanChoice case-insensitive
 
 function getHumanChoice() {
     let humChoice = prompt("Rock, Paper, or Scissors?", "Rock");
@@ -36,7 +37,7 @@ let computerScore = 0;
 // Log a string value for playRound such as "You lose! Paper beats Rock!"
 // Increment the ___Score variable based on the winner
 
-function playRound () {
+function playRound() {
     if (humanSelection === "rock" && computerSelection === "Rock") {
         return "You both chose Rock! Try again!";
     } else if (humanSelection === "rock" && computerSelection === "Paper") {
@@ -64,15 +65,22 @@ function playRound () {
     }
 }
 
+function playGame() {
+    for(let i = 0; i < 5; i++) {
+        humanSelection = getHumanChoice();
+        computerSelection = getComputerChoice();
+        // playRound(humanSelection, computerSelection);
+        console.log(playRound(humanSelection, computerSelection));
+        console.log("Human Score: " + humanScore);
+        console.log("Computer Score: " + computerScore);
+    }
+}
+
 // Define two parameters for playRound: humanChoice and computerChoice. Use these two parameters to take both choices as arguments
-// Make humanChoice case-insensitive
 
-// getHumanChoice();
-// getComputerChoice();
+let humanSelection;
+let computerSelection;
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+// console.log(playRound(humanSelection, computerSelection));
 
-console.log(playRound(humanSelection, computerSelection));
-console.log("Human Score: " + humanScore);
-console.log("Computer Score: " + computerScore);
+console.log(playGame());
