@@ -1,4 +1,4 @@
-# ROCK PAPER SCISSORS FTW
+# ROCK PAPER SCISSORS FOR THE WIN
 
 I am creating a JavaScript version of Rock Paper Scissors to be played
 in the console. I am really enjoying this course so far and it feels so
