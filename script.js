@@ -17,9 +17,6 @@ let humanScore = 0;
 let computerScore = 0;
 
 // Write the logic to play a single round
-// Declare a new function called playRound
-// Log a string value for playRound such as "You lose! Paper beats Rock!"
-// Increment the ___Score variable based on the winner
 
 function playRound(humanSelection) {
     if ((humanScore < 5) && (computerScore < 5)) {
@@ -27,14 +24,12 @@ function playRound(humanSelection) {
         if ((humanSelection === "rock" && computerSelection === "Rock") ||
         (humanSelection === "paper" && computerSelection === "Paper") ||
         (humanSelection === "scissors" && computerSelection === "Scissors")) {
-            console.log(`You both chose ${computerSelection}! Try again!\nyou: ${humanScore} computer: ${computerScore}`);
             announcer.textContent = `You both chose ${computerSelection}! Try again!`;
         } else if ((humanSelection === "rock" && computerSelection === "Paper") ||
         (humanSelection === "paper" && computerSelection === "Scissors") ||
         (humanSelection === "scissors" && computerSelection === "Rock")) {
             computerScore += 1;
             if (computerScore < 5) {
-                console.log(`The computer chose ${computerSelection}, you lose. :(\nyou: ${humanScore} computer: ${computerScore}`);
                 announcer.textContent = `The computer chose ${computerSelection}, you lose. :(`;
             } else {
                 announcer.textContent = "The computer wins, try again.";
@@ -43,7 +38,6 @@ function playRound(humanSelection) {
         } else {
             humanScore += 1;
             if (humanScore < 5) {
-                console.log(`The computer chose ${computerSelection}, you win!!!\nyou: ${humanScore} computer: ${computerScore}`);
                 announcer.textContent = `The computer chose ${computerSelection}, you win!!!`;
             } else {
                 announcer.textContent = "You are the winner!!!";
