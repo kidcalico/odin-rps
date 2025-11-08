@@ -1,6 +1,6 @@
 // console.log("Hello World!")
-const interface = document.querySelector("#interface");
-interface.style.cssText = "color: blue; margin: auto; width; 500px;";
+// const interface = document.querySelector("#interface");
+// interface.style.cssText = "color: blue; margin: auto; width; 500px;";
 
 // Write function getComputerChoice so that getComputerChoice will return "Rock", "Paper" or "Scissors"
 
@@ -39,7 +39,7 @@ let computerScore = 0;
 // Increment the ___Score variable based on the winner
 
 function playRound(humanSelection) {
-    if ((humanScore && computerScore) < 5) {
+    if ((humanScore < 5) && (computerScore < 5)) {
         const computerSelection = getComputerChoice();
         if ((humanSelection === "rock" && computerSelection === "Rock") ||
         (humanSelection === "paper" && computerSelection === "Paper") ||
@@ -55,6 +55,7 @@ function playRound(humanSelection) {
                 announcer.textContent = `The computer chose ${computerSelection}, you lose. :(`;
             } else {
                 announcer.textContent = "The computer wins, try again.";
+                scoreBoard.appendChild(refBtn);
             }
         } else {
             humanScore += 1;
@@ -63,12 +64,13 @@ function playRound(humanSelection) {
                 announcer.textContent = `The computer chose ${computerSelection}, you win!!!`;
             } else {
                 announcer.textContent = "You are the winner!!!";
+                scoreBoard.appendChild(refBtn);
             }
         }
         scoreDiv.textContent = `You: ${humanScore} Computer: ${computerScore}`;
-    } else {
-        scoreBoard.appendChild(refBtn);
-    }
+    } 
+    // else if ((humanScore === 5) || (computerScore === 5)) {
+    // }
 }
 
 // function playGame(humanSelection) {
@@ -123,7 +125,7 @@ function playRound(humanSelection) {
 
     const refBtn = document.createElement("button");
     refBtn.textContent = "Try Again";
-    refBtn.addEventListener('click', () => window.location.reload);
+    refBtn.addEventListener('click', () => window.location.reload());
 
 
 // Add an event listener to the buttons that call playRound function with the correct playerSelection when clicked
